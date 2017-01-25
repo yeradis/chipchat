@@ -8,6 +8,8 @@ NSString* const kItemChats         = @"chats";
 
 @implementation Messages
 
+@synthesize messages;
+
 -(id) initWithDictionary:(NSDictionary *) dictionary {
     self = [super init];
     if (self) {
@@ -43,6 +45,8 @@ NSString* const kItemChats         = @"chats";
 @end
 
 @implementation Message
+
+@synthesize username,userImageUrl,content,time;
 
 -(id) initWithDictionary:(NSDictionary *) dictionary {
     self = [super init];

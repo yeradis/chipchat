@@ -23,6 +23,12 @@
 		785462FB1E351D2600FFCA66 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = 785462F91E351D2600FFCA66 /* Messages.m */; };
 		785462FE1E35DC8300FFCA66 /* MessagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785462FD1E35DC8300FFCA66 /* MessagesTests.m */; };
 		785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 785462FF1E35DD9A00FFCA66 /* MessageTest.m */; };
+		7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */; };
+		7856A3D31E37F523002F0598 /* chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 7856A3D21E37F523002F0598 /* chat.json */; };
+		78CDB8E81E38888500A689B6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E61E38888500A689B6 /* AFNetworking.framework */; };
+		78CDB8E91E38888500A689B6 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E61E38888500A689B6 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78CDB8EA1E38888500A689B6 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E71E38888500A689B6 /* OCMock.framework */; };
+		78CDB8EB1E38888500A689B6 /* OCMock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E71E38888500A689B6 /* OCMock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,21 @@
 			remoteInfo = ChitChat;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		78CDB8EC1E38888500A689B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				78CDB8EB1E38888500A689B6 /* OCMock.framework in Embed Frameworks */,
+				78CDB8E91E38888500A689B6 /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		785462651E32BC9E00FFCA66 /* ChitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +78,10 @@
 		785462F91E351D2600FFCA66 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Messages.m; path = Services/Models/Messages.m; sourceTree = "<group>"; };
 		785462FD1E35DC8300FFCA66 /* MessagesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTests.m; sourceTree = "<group>"; };
 		785462FF1E35DD9A00FFCA66 /* MessageTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTest.m; sourceTree = "<group>"; };
+		7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChitChatMessagesTests.m; sourceTree = "<group>"; };
+		7856A3D21E37F523002F0598 /* chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = chat.json; path = Resources/chat.json; sourceTree = "<group>"; };
+		78CDB8E61E38888500A689B6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		78CDB8E71E38888500A689B6 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CDB8EA1E38888500A689B6 /* OCMock.framework in Frameworks */,
+				78CDB8E81E38888500A689B6 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +107,13 @@
 		7854625C1E32BC9D00FFCA66 = {
 			isa = PBXGroup;
 			children = (
+				78CDB8E61E38888500A689B6 /* AFNetworking.framework */,
+				78CDB8E71E38888500A689B6 /* OCMock.framework */,
 				785462B71E34F7E800FFCA66 /* Resources */,
 				785462671E32BC9E00FFCA66 /* ChitChat */,
 				785462811E32BC9E00FFCA66 /* ChitChatTests */,
 				785462661E32BC9E00FFCA66 /* Products */,
+				7856A3CE1E37EDB9002F0598 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,8 +153,8 @@
 		785462811E32BC9E00FFCA66 /* ChitChatTests */ = {
 			isa = PBXGroup;
 			children = (
+				7856A3CF1E37EDEA002F0598 /* Services */,
 				785462FC1E35DC6000FFCA66 /* Models */,
-				785462821E32BC9E00FFCA66 /* ChitChatLoginTests.m */,
 				785462841E32BC9E00FFCA66 /* Info.plist */,
 			);
 			path = ChitChatTests;
@@ -133,6 +163,7 @@
 		785462B71E34F7E800FFCA66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7856A3D21E37F523002F0598 /* chat.json */,
 				785462B81E34F7F600FFCA66 /* cc.jpg */,
 			);
 			name = Resources;
@@ -176,6 +207,22 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		7856A3CE1E37EDB9002F0598 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7856A3CF1E37EDEA002F0598 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				785462821E32BC9E00FFCA66 /* ChitChatLoginTests.m */,
+				7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +233,7 @@
 				785462611E32BC9D00FFCA66 /* Sources */,
 				785462621E32BC9D00FFCA66 /* Frameworks */,
 				785462631E32BC9D00FFCA66 /* Resources */,
+				78CDB8EC1E38888500A689B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				785462BA1E34F7F600FFCA66 /* cc.jpg in Resources */,
+				7856A3D31E37F523002F0598 /* chat.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +346,7 @@
 				785462E71E35041B00FFCA66 /* LoginViewController.m in Sources */,
 				785462FB1E351D2600FFCA66 /* Messages.m in Sources */,
 				785462831E32BC9E00FFCA66 /* ChitChatLoginTests.m in Sources */,
+				7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */,
 				785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */,
 				785462FE1E35DC8300FFCA66 /* MessagesTests.m in Sources */,
 				785462EC1E35070900FFCA66 /* ChitChat.m in Sources */,
@@ -428,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HGX8T65WV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChitChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeradis.garage.mobile.ChitChat;
@@ -440,6 +494,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HGX8T65WV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChitChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeradis.garage.mobile.ChitChat;
@@ -452,6 +510,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = HGX8T65WV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChitChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeradis.garage.mobile.ChitChatTests;
@@ -465,6 +527,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = HGX8T65WV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChitChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yeradis.garage.mobile.ChitChatTests;
