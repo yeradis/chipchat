@@ -35,11 +35,23 @@
     [[[ChitChat alloc] init] loginWithUserName:@"" success:^{
     } failure:^(NSError * _Nonnull error) {
         [expectation1 fulfill];
+        XCTAssertNotNil(error);
     }];
     
     [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
+-(void) test_LoginWithUserName_HavingAnExistingUsername_ShouldFail {
+    XCTestExpectation *expectation1 = [self expectationWithDescription:@"Failure expectation"];
+    
+    [[[ChitChat alloc] init] loginWithUserName:@"lily" success:^{
+    } failure:^(NSError * _Nonnull error) {
+        [expectation1 fulfill];
+        XCTAssertNotNil(error);
+    }];
+    
+    [self waitForExpectationsWithTimeout:5 handler:nil];
+}
 -(void) test_loginWithUserName_HavingValidParam_ShouldBeSuccess_UsingHighExpectations {
     XCTestExpectation *expectation1 = [self expectationWithDescription:@"Failure expectation"];
     __block BOOL success = NO;

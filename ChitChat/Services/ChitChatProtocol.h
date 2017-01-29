@@ -10,6 +10,7 @@ typedef void (^WSFinishedBlockWithImage)( UIImage* _Nullable  responseImage, NSE
 typedef void (^WSFinishedBlockWithMessage)(_Nullable id<Message> message);
 
 @protocol ChitChatProtocol
+@property (nullable, nonatomic, strong) NSArray* reservedNames;
 @property (nonnull, nonatomic, strong) AFHTTPSessionManager* client;
 @property (nullable, nonatomic, strong, readonly) NSString* session;
 @property (nullable, nonatomic, copy) WSFinishedBlockWithMessage messageReceived;

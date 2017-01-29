@@ -10,11 +10,13 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
 @synthesize session = _session;
 @synthesize client = _client;
 @synthesize messageReceived;
+@synthesize reservedNames;
 
 -(id) init {
     self = [super init];
     if (self) {
         _client = [AFHTTPSessionManager manager];
+        [self buildReservedUserNameList];
     }
     return self;
 }
@@ -39,9 +41,10 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
     }
 }
 
--(void) sendMessage:(NSString *)message success:(dispatch_block_t)success failure:(void (^)(NSError * _Nonnull))failure {
-    if (message && [message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
-        
+-(void) sendMessage:(NSString *)message success:(dispatch_block_t)success
+            failure:(void (^)(NSError * _Nonnull))failure {
+    if ([self isValidParam:message]) {
+
         [self notifyMessage:[Message messageWithCurrentSession:self.session
                                                        message:message]];
         
@@ -56,18 +59,62 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
         }
     }
 }
--(void) loginWithUserName:(NSString *)username success:(dispatch_block_t)success failure:(void (^)(NSError * _Nonnull))failure {
-    if (username && [username stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0){
-        if (success) {
-            [self storeSession:username];
-            success();
-        }
+-(void) loginWithUserName:(NSString *)username
+                  success:(dispatch_block_t)success
+                  failure:(void (^)(NSError * _Nonnull))failure {
+    
+    if ([self isValidParam:username] &&
+        ![self isExistingUserName:username]){
+    
+        [self handleLoginSuccess:success userName:username];
+        
     } else {
-        if (failure){
-            [self removeSession];
-            NSError* error = [NSError errorWithDomain:@"User name can not be nil or empty, Try again" code:666 userInfo:nil];
-            failure(error);
+        NSString* errorMessage = @"User name not valid";
+        errorMessage = ([self isValidParam:username] &&
+                        [self isExistingUserName:username]) ?
+        @"Choose another name":errorMessage;
+    
+        [self handleLoginFailure:failure message:errorMessage];
+    }
+}
+
+-(void) buildReservedUserNameList {
+    self.reservedNames = @[@"Carrie", @"Anthony", @"Eleanor",
+                           @"Rodney", @"Oliva", @"Merve", @"Lily"];
+    
+    [self fetchMessagesWithCompletionBlock:^(id<Messages>  _Nullable response, NSError * _Nullable error) {
+        if (response){
+            NSMutableArray* currentUsernameList = [[NSMutableArray alloc] init];
+            for (id<Message> message in response.messages){
+                [currentUsernameList addObject:message.username];
+            }
+            self.reservedNames = [currentUsernameList mutableCopy];
         }
+    }];
+}
+
+-(BOOL) isExistingUserName:(NSString*) username {
+    BOOL exists = ([[self.reservedNames valueForKey:@"lowercaseString"] containsObject:[username lowercaseString]]);
+    return exists;
+}
+
+-(BOOL) isValidParam:(NSString*) param {
+    return param &&
+    [param stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0;
+}
+
+-(void) handleLoginSuccess:(dispatch_block_t) success userName:(NSString*) username {
+    if (success) {
+        [self storeSession:username];
+        success();
+    }
+}
+
+-(void) handleLoginFailure:(void (^)(NSError * _Nonnull)) failure message:(NSString*) message {
+    if (failure) {
+        [self removeSession];
+        NSError* error = [NSError errorWithDomain:message code:666 userInfo:nil];
+        failure(error);
     }
 }
 
