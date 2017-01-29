@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782155B81E3904C100A05B6B /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 782155B71E3904C100A05B6B /* MessagesTableViewController.m */; };
+		782155B91E3904C100A05B6B /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 782155B71E3904C100A05B6B /* MessagesTableViewController.m */; };
 		7854626A1E32BC9E00FFCA66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 785462691E32BC9E00FFCA66 /* main.m */; };
 		7854626D1E32BC9E00FFCA66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7854626C1E32BC9E00FFCA66 /* AppDelegate.m */; };
 		785462731E32BC9E00FFCA66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785462711E32BC9E00FFCA66 /* Main.storyboard */; };
@@ -25,6 +27,19 @@
 		785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 785462FF1E35DD9A00FFCA66 /* MessageTest.m */; };
 		7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */; };
 		7856A3D31E37F523002F0598 /* chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 7856A3D21E37F523002F0598 /* chat.json */; };
+		7862311D1E3DE2D7001C4E7C /* person-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7862311C1E3DE2D7001C4E7C /* person-icon.jpg */; };
+		7862311E1E3DE2D7001C4E7C /* person-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7862311C1E3DE2D7001C4E7C /* person-icon.jpg */; };
+		786231231E3DE663001C4E7C /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786231211E3DE663001C4E7C /* SendMessageViewController.m */; };
+		786231241E3DE663001C4E7C /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786231211E3DE663001C4E7C /* SendMessageViewController.m */; };
+		786231281E3E24D2001C4E7C /* ChitChatSendMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 786231271E3E24D2001C4E7C /* ChitChatSendMessageTests.m */; };
+		7862312C1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */; };
+		7862312D1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */; };
+		7862312E1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
+		7862312F1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
+		78C8C0B91E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
+		78C8C0BA1E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
+		78C8C0BB1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */; };
+		78C8C0BC1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */; };
 		78CDB8E81E38888500A689B6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E61E38888500A689B6 /* AFNetworking.framework */; };
 		78CDB8E91E38888500A689B6 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E61E38888500A689B6 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78CDB8EA1E38888500A689B6 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CDB8E71E38888500A689B6 /* OCMock.framework */; };
@@ -57,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		782155B61E3904C100A05B6B /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesTableViewController.h; path = Scenes/Messages/MessagesTableViewController.h; sourceTree = "<group>"; };
+		782155B71E3904C100A05B6B /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesTableViewController.m; path = Scenes/Messages/MessagesTableViewController.m; sourceTree = "<group>"; };
 		785462651E32BC9E00FFCA66 /* ChitChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChitChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785462691E32BC9E00FFCA66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7854626B1E32BC9E00FFCA66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +97,16 @@
 		785462FF1E35DD9A00FFCA66 /* MessageTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTest.m; sourceTree = "<group>"; };
 		7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChitChatMessagesTests.m; sourceTree = "<group>"; };
 		7856A3D21E37F523002F0598 /* chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = chat.json; path = Resources/chat.json; sourceTree = "<group>"; };
+		7862311C1E3DE2D7001C4E7C /* person-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "person-icon.jpg"; sourceTree = "<group>"; };
+		786231201E3DE663001C4E7C /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMessageViewController.h; path = Scenes/Messages/Send/SendMessageViewController.h; sourceTree = "<group>"; };
+		786231211E3DE663001C4E7C /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMessageViewController.m; path = Scenes/Messages/Send/SendMessageViewController.m; sourceTree = "<group>"; };
+		786231271E3E24D2001C4E7C /* ChitChatSendMessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChitChatSendMessageTests.m; sourceTree = "<group>"; };
+		786231291E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentUserMessageTableViewCell.h; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.h; sourceTree = "<group>"; };
+		7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentUserMessageTableViewCell.m; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.m; sourceTree = "<group>"; };
+		7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurrentUserMessageTableViewCell.xib; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.xib; sourceTree = "<group>"; };
+		78C8C0B61E3DCAAF009BA00D /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = Scenes/Messages/Cell/MessageTableViewCell.h; sourceTree = "<group>"; };
+		78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = Scenes/Messages/Cell/MessageTableViewCell.m; sourceTree = "<group>"; };
+		78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageTableViewCell.xib; path = Scenes/Messages/Cell/MessageTableViewCell.xib; sourceTree = "<group>"; };
 		78CDB8E61E38888500A689B6 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		78CDB8E71E38888500A689B6 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,11 +131,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782155B41E39042400A05B6B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				782155B51E39042F00A05B6B /* Messages */,
+				785462E31E3503B100FFCA66 /* Login */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		782155B51E39042F00A05B6B /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7862311F1E3DE62B001C4E7C /* Send */,
+				78C8C0B51E3DCA5F009BA00D /* Cell */,
+				782155B61E3904C100A05B6B /* MessagesTableViewController.h */,
+				782155B71E3904C100A05B6B /* MessagesTableViewController.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		7854625C1E32BC9D00FFCA66 = {
 			isa = PBXGroup;
 			children = (
-				78CDB8E61E38888500A689B6 /* AFNetworking.framework */,
-				78CDB8E71E38888500A689B6 /* OCMock.framework */,
 				785462B71E34F7E800FFCA66 /* Resources */,
 				785462671E32BC9E00FFCA66 /* ChitChat */,
 				785462811E32BC9E00FFCA66 /* ChitChatTests */,
@@ -129,8 +174,8 @@
 		785462671E32BC9E00FFCA66 /* ChitChat */ = {
 			isa = PBXGroup;
 			children = (
+				782155B41E39042400A05B6B /* Scenes */,
 				785462E81E3506C800FFCA66 /* Services */,
-				785462E31E3503B100FFCA66 /* Login */,
 				7854626B1E32BC9E00FFCA66 /* AppDelegate.h */,
 				7854626C1E32BC9E00FFCA66 /* AppDelegate.m */,
 				785462711E32BC9E00FFCA66 /* Main.storyboard */,
@@ -163,6 +208,7 @@
 		785462B71E34F7E800FFCA66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7862311C1E3DE2D7001C4E7C /* person-icon.jpg */,
 				7856A3D21E37F523002F0598 /* chat.json */,
 				785462B81E34F7F600FFCA66 /* cc.jpg */,
 			);
@@ -210,6 +256,8 @@
 		7856A3CE1E37EDB9002F0598 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78CDB8E61E38888500A689B6 /* AFNetworking.framework */,
+				78CDB8E71E38888500A689B6 /* OCMock.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,8 +267,31 @@
 			children = (
 				785462821E32BC9E00FFCA66 /* ChitChatLoginTests.m */,
 				7856A3D01E37EE15002F0598 /* ChitChatMessagesTests.m */,
+				786231271E3E24D2001C4E7C /* ChitChatSendMessageTests.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		7862311F1E3DE62B001C4E7C /* Send */ = {
+			isa = PBXGroup;
+			children = (
+				786231201E3DE663001C4E7C /* SendMessageViewController.h */,
+				786231211E3DE663001C4E7C /* SendMessageViewController.m */,
+			);
+			name = Send;
+			sourceTree = "<group>";
+		};
+		78C8C0B51E3DCA5F009BA00D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				78C8C0B61E3DCAAF009BA00D /* MessageTableViewCell.h */,
+				78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */,
+				78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */,
+				786231291E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.h */,
+				7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */,
+				7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +381,9 @@
 			files = (
 				785462781E32BC9E00FFCA66 /* LaunchScreen.storyboard in Resources */,
 				785462751E32BC9E00FFCA66 /* Assets.xcassets in Resources */,
+				7862311D1E3DE2D7001C4E7C /* person-icon.jpg in Resources */,
+				78C8C0BB1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */,
+				7862312E1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */,
 				785462731E32BC9E00FFCA66 /* Main.storyboard in Resources */,
 				785462B91E34F7F600FFCA66 /* cc.jpg in Resources */,
 			);
@@ -320,7 +394,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				785462BA1E34F7F600FFCA66 /* cc.jpg in Resources */,
+				78C8C0BC1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */,
+				7862312F1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */,
 				7856A3D31E37F523002F0598 /* chat.json in Resources */,
+				7862311E1E3DE2D7001C4E7C /* person-icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +409,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7854626D1E32BC9E00FFCA66 /* AppDelegate.m in Sources */,
+				782155B81E3904C100A05B6B /* MessagesTableViewController.m in Sources */,
+				78C8C0B91E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */,
 				785462EB1E35070900FFCA66 /* ChitChat.m in Sources */,
+				7862312C1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */,
+				786231231E3DE663001C4E7C /* SendMessageViewController.m in Sources */,
 				785462FA1E351D2600FFCA66 /* Messages.m in Sources */,
 				7854626A1E32BC9E00FFCA66 /* main.m in Sources */,
 				785462E61E35041B00FFCA66 /* LoginViewController.m in Sources */,
@@ -344,12 +425,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				785462E71E35041B00FFCA66 /* LoginViewController.m in Sources */,
+				786231281E3E24D2001C4E7C /* ChitChatSendMessageTests.m in Sources */,
 				785462FB1E351D2600FFCA66 /* Messages.m in Sources */,
+				78C8C0BA1E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */,
 				785462831E32BC9E00FFCA66 /* ChitChatLoginTests.m in Sources */,
+				786231241E3DE663001C4E7C /* SendMessageViewController.m in Sources */,
 				7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */,
 				785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */,
 				785462FE1E35DC8300FFCA66 /* MessagesTests.m in Sources */,
 				785462EC1E35070900FFCA66 /* ChitChat.m in Sources */,
+				7862312D1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */,
+				782155B91E3904C100A05B6B /* MessagesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

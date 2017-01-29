@@ -1,12 +1,7 @@
-//
-//  AppDelegate.m
-//  ChitChat
-//
-//  Created by yeradis on 20/01/2017.
-//  Copyright © 2017 yeradis. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "MessagesTableViewController.h"
+#import "ChitChat.h"
 
 @interface AppDelegate ()
 
@@ -16,10 +11,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupCache];
+    
+    ChitChat* client = [[ChitChat alloc] init];
+    
+    if ([client session]) {
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"messagesNatigation"];
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+    }
+    
     return YES;
 }
 
+-(void) setupCache {
+    [NSURLCache setSharedURLCache:[AFImageDownloader defaultURLCache]];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

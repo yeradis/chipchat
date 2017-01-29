@@ -1,5 +1,6 @@
 #import "LoginViewController.h"
 #import "ChitChat.h"
+#import "MessagesTableViewController.h"
 
 @interface LoginViewController ()
 
@@ -9,8 +10,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (!self.service) {
-        self.service = [[ChitChat alloc] init];
+    if (!self.serviceClient) {
+        self.serviceClient = [[ChitChat alloc] init];
     }
 }
 
@@ -31,13 +32,19 @@
 
 - (IBAction)doLogin:(id)sender {
     [self clearLoginState];
-    if (self.service) {
-        [self.service loginWithUserName:self.loginInput.text success:^{
-
+    if (self.serviceClient) {
+        [self.serviceClient loginWithUserName:self.loginInput.text success:^{
+            [self showMessages];
         } failure:^(NSError * _Nonnull error) {
             [self setLoginErrorStateWithMessage:error.domain];
         }];
     }
+}
+
+-(void) showMessages {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MessagesTableViewController* vc = (MessagesTableViewController*)[storyboard instantiateViewControllerWithIdentifier:@"messagesNatigation"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(void) setLoginErrorStateWithMessage:(NSString*) msg {
