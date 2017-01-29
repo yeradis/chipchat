@@ -14,6 +14,7 @@ extern NSString* const kItemChats;
 
 -(id) initWithDictionary:(NSDictionary*) dictionary;
 +(BOOL) isValidMessageDictionary:(NSDictionary*) dictionary;
++(nullable id) messageWithCurrentSession:(NSString*) session message:(NSString*) message;
 @end;
 
 @protocol Messages

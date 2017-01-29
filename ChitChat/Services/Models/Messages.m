@@ -81,4 +81,27 @@ NSString* const kItemChats         = @"chats";
            || dictionary[kItemTime];
 }
 
++(id) messageWithCurrentSession:(NSString *)session message:(NSString *)message {
+    if (![self isValidParamValue:session] || ![self isValidParamValue:message])
+    {
+        return nil;
+    }
+    
+    id<Message> msg = [[Message alloc] init];
+    msg.content     =  message;
+    msg.username    = session;
+    NSDate* date    = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm"];
+    NSString *time = [formatter stringFromDate:date];
+    msg.time = time;
+    
+    return msg;
+}
+
++(BOOL) isValidParamValue:(NSString*) value {
+    return value && [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0;
+}
+
 @end
