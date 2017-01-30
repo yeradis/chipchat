@@ -172,7 +172,7 @@
         <!--Send Message View Controller-->
         <scene sceneID="d5g-6T-grK">
             <objects>
-                <viewController id="8M8-zL-0fQ" customClass="SendMessageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sendMessage" id="8M8-zL-0fQ" customClass="SendMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PDS-oA-HAh"/>
                         <viewControllerLayoutGuide type="bottom" id="YjV-so-SsO"/>

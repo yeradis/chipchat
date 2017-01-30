@@ -36,12 +36,6 @@
     self.vc = (MessagesTableViewController *)[storyboard instantiateViewControllerWithIdentifier: @"messages"];
 }
 
-- (void)loadView
-{
-    [self.window addSubview:self.vc.view];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate date]];
-}
-
 -(void) test_viewLoad_ShouldNoThrow {
     XCTAssertNoThrow(self.vc.view);
 }

@@ -11,11 +11,6 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-
 - (IBAction)sendMessage:(id)sender {
     if (self.serviceClient) {
         [self.serviceClient sendMessage:self.message.text success:^{

@@ -37,6 +37,8 @@
 		7862312E1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
 		7862312F1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
 		7864D8271E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */; };
+		7864D8331E3FAC1700E2CCE7 /* SendMessageViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7864D8321E3FAC1700E2CCE7 /* SendMessageViewControllerTests.m */; };
+		7864D8361E3FB4EA00E2CCE7 /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7864D8351E3FB4EA00E2CCE7 /* LoginViewControllerTests.m */; };
 		78C8C0B91E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
 		78C8C0BA1E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
 		78C8C0BB1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */; };
@@ -106,6 +108,8 @@
 		7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentUserMessageTableViewCell.m; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.m; sourceTree = "<group>"; };
 		7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurrentUserMessageTableViewCell.xib; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.xib; sourceTree = "<group>"; };
 		7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewControllerTest.m; sourceTree = "<group>"; };
+		7864D8321E3FAC1700E2CCE7 /* SendMessageViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewControllerTests.m; sourceTree = "<group>"; };
+		7864D8351E3FB4EA00E2CCE7 /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
 		78C8C0B61E3DCAAF009BA00D /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = Scenes/Messages/Cell/MessageTableViewCell.h; sourceTree = "<group>"; };
 		78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = Scenes/Messages/Cell/MessageTableViewCell.m; sourceTree = "<group>"; };
 		78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageTableViewCell.xib; path = Scenes/Messages/Cell/MessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		7864D8241E3F11EA00E2CCE7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7864D8341E3FB4CC00E2CCE7 /* LoginVC */,
+				7864D8311E3FAB9A00E2CCE7 /* SendMessageVC */,
 				7864D8251E3F120400E2CCE7 /* MessagesTableVC */,
 			);
 			name = Scenes;
@@ -298,6 +304,22 @@
 				7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */,
 			);
 			name = MessagesTableVC;
+			sourceTree = "<group>";
+		};
+		7864D8311E3FAB9A00E2CCE7 /* SendMessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				7864D8321E3FAC1700E2CCE7 /* SendMessageViewControllerTests.m */,
+			);
+			name = SendMessageVC;
+			sourceTree = "<group>";
+		};
+		7864D8341E3FB4CC00E2CCE7 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				7864D8351E3FB4EA00E2CCE7 /* LoginViewControllerTests.m */,
+			);
+			name = LoginVC;
 			sourceTree = "<group>";
 		};
 		78C8C0B51E3DCA5F009BA00D /* Cell */ = {
@@ -443,12 +465,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7864D8331E3FAC1700E2CCE7 /* SendMessageViewControllerTests.m in Sources */,
 				785462E71E35041B00FFCA66 /* LoginViewController.m in Sources */,
 				786231281E3E24D2001C4E7C /* ChitChatSendMessageTests.m in Sources */,
 				785462FB1E351D2600FFCA66 /* Messages.m in Sources */,
 				78C8C0BA1E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */,
 				785462831E32BC9E00FFCA66 /* ChitChatLoginTests.m in Sources */,
 				786231241E3DE663001C4E7C /* SendMessageViewController.m in Sources */,
+				7864D8361E3FB4EA00E2CCE7 /* LoginViewControllerTests.m in Sources */,
 				7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */,
 				785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */,
 				7864D8271E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m in Sources */,
