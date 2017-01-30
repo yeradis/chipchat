@@ -116,8 +116,11 @@
         <!--Chat - [First name  & Last name]-->
         <scene sceneID="58B-uO-xGS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2lT-L6-oE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="agn-5d-uTr" customClass="MessagesTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="messages" id="agn-5d-uTr" customClass="MessagesTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jIy-KE-fYe"/>
+                        <viewControllerLayoutGuide type="bottom" id="ELX-2A-Ot4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rqT-d6-pZb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +165,7 @@
                         <outlet property="tableView" destination="sqL-O0-eu0" id="30I-og-mOX"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lT-L6-oE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39" y="888"/>
         </scene>
@@ -169,6 +173,10 @@
         <scene sceneID="d5g-6T-grK">
             <objects>
                 <viewController id="8M8-zL-0fQ" customClass="SendMessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PDS-oA-HAh"/>
+                        <viewControllerLayoutGuide type="bottom" id="YjV-so-SsO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="INU-vO-hBt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

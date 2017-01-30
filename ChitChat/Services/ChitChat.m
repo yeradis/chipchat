@@ -122,9 +122,9 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
     if (block) {
         [self fetchMessagesDictionaryWithCompletionBlock:^(NSDictionary * _Nullable responseDictionary, NSError * _Nullable error) {
             id<Messages> messages = nil;
-            if (responseDictionary) {
+            if (responseDictionary && [responseDictionary count] > 0) {
                 messages = [[Messages alloc] initWithDictionary:responseDictionary];
-            }
+            } 
             block(messages,error);
         }];
     }

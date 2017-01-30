@@ -21,8 +21,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MessageTableViewCell" bundle:nil] forCellReuseIdentifier:@"MessageCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CurrentUserMessageTableViewCell" bundle:nil] forCellReuseIdentifier:@"CurrentUserMessageCell"];
     
-    self.serviceClient.messageReceived = [self handleNewMessageReceived];
-    [self.serviceClient fetchMessagesWithCompletionBlock:[self handleMessageListReceived]];
+    [self setupServiceClient];
     
     self.title = [NSString stringWithFormat:@"Chat - %@",self.serviceClient.session];
 }
@@ -32,6 +31,11 @@
         _serviceClient = [[ChitChat alloc] init];
     }
     return _serviceClient;
+}
+
+-(void) setupServiceClient {
+    self.serviceClient.messageReceived = [self handleNewMessageReceived];
+    [self.serviceClient fetchMessagesWithCompletionBlock:[self handleMessageListReceived]];
 }
 
 // called after a single new message received, like those the current user sends
@@ -49,9 +53,11 @@
     __weak MessagesTableViewController *weakself = self;
     return ^(id<Messages>  _Nullable response, NSError * _Nullable error) {
         if (response) {
+            
             weakself.messages = [NSMutableArray<Message> arrayWithArray:response.messages];
             [weakself.tableView reloadData];
             [weakself.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            
         }
     };
 }

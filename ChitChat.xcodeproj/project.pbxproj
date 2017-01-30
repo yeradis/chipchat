@@ -36,6 +36,7 @@
 		7862312D1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */; };
 		7862312E1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
 		7862312F1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */; };
+		7864D8271E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */; };
 		78C8C0B91E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
 		78C8C0BA1E3DCAAF009BA00D /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */; };
 		78C8C0BB1E3DCAAF009BA00D /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */; };
@@ -104,6 +105,7 @@
 		786231291E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentUserMessageTableViewCell.h; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.h; sourceTree = "<group>"; };
 		7862312A1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentUserMessageTableViewCell.m; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.m; sourceTree = "<group>"; };
 		7862312B1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurrentUserMessageTableViewCell.xib; path = Scenes/Messages/Cell/CurrentUserMessageTableViewCell.xib; sourceTree = "<group>"; };
+		7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewControllerTest.m; sourceTree = "<group>"; };
 		78C8C0B61E3DCAAF009BA00D /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = Scenes/Messages/Cell/MessageTableViewCell.h; sourceTree = "<group>"; };
 		78C8C0B71E3DCAAF009BA00D /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = Scenes/Messages/Cell/MessageTableViewCell.m; sourceTree = "<group>"; };
 		78C8C0B81E3DCAAF009BA00D /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageTableViewCell.xib; path = Scenes/Messages/Cell/MessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		785462811E32BC9E00FFCA66 /* ChitChatTests */ = {
 			isa = PBXGroup;
 			children = (
+				7864D8241E3F11EA00E2CCE7 /* Scenes */,
 				7856A3CF1E37EDEA002F0598 /* Services */,
 				785462FC1E35DC6000FFCA66 /* Models */,
 				785462841E32BC9E00FFCA66 /* Info.plist */,
@@ -279,6 +282,22 @@
 				786231211E3DE663001C4E7C /* SendMessageViewController.m */,
 			);
 			name = Send;
+			sourceTree = "<group>";
+		};
+		7864D8241E3F11EA00E2CCE7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7864D8251E3F120400E2CCE7 /* MessagesTableVC */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		7864D8251E3F120400E2CCE7 /* MessagesTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				7864D8261E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m */,
+			);
+			name = MessagesTableVC;
 			sourceTree = "<group>";
 		};
 		78C8C0B51E3DCA5F009BA00D /* Cell */ = {
@@ -432,6 +451,7 @@
 				786231241E3DE663001C4E7C /* SendMessageViewController.m in Sources */,
 				7856A3D11E37EE15002F0598 /* ChitChatMessagesTests.m in Sources */,
 				785463001E35DD9A00FFCA66 /* MessageTest.m in Sources */,
+				7864D8271E3F121A00E2CCE7 /* MessagesTableViewControllerTest.m in Sources */,
 				785462FE1E35DC8300FFCA66 /* MessagesTests.m in Sources */,
 				785462EC1E35070900FFCA66 /* ChitChat.m in Sources */,
 				7862312D1E3E4F7C001C4E7C /* CurrentUserMessageTableViewCell.m in Sources */,
