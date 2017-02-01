@@ -83,23 +83,27 @@
     
     UITableViewCell* cell;
     if ([message.username isEqualToString:self.serviceClient.session]) {
-        cell = [self cellForCurrentUserMessage:message table:tableView];
+        cell = [self cellForCurrentUserMessage:message table:tableView indexPath:indexPath];
     } else {
-        cell = [self cellForMessage:message table:tableView];
+        cell = [self cellForMessage:message table:tableView indexPath:indexPath];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
--(UITableViewCell*) cellForMessage:(id<Message>) message table:(UITableView*) tableView {
-    MessageTableViewCell *cell = (MessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+-(UITableViewCell*) cellForMessage:(id<Message>) message
+                             table:(UITableView*) tableView
+                         indexPath:(NSIndexPath *)indexPath {
+    MessageTableViewCell *cell = (MessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
     [cell setupWithMessage:message serviceClient:self.serviceClient];
     return cell;
 }
 
--(UITableViewCell*) cellForCurrentUserMessage:(id<Message>) message table:(UITableView*) tableView {
-    CurrentUserMessageTableViewCell *cell = (CurrentUserMessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"CurrentUserMessageCell"];
+-(UITableViewCell*) cellForCurrentUserMessage:(id<Message>) message
+                                        table:(UITableView*) tableView
+                                    indexPath:(NSIndexPath *)indexPath {
+    CurrentUserMessageTableViewCell *cell = (CurrentUserMessageTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"CurrentUserMessageCell" forIndexPath:indexPath];
     [cell setupWithMessage:message];
     return cell;
 }

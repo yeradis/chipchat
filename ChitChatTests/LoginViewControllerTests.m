@@ -73,4 +73,19 @@
     [self.partiallyMockedApi verify];
 }
 
+-(void) test_ShowMessages_ShouldNoThrow {
+    XCTAssertNotNil([self.vc view]);
+    XCTAssertNoThrow([self.vc showMessages]);
+}
+
+-(void) test_setLoginErrorStateWithMessageHavingNilParam_ShouldNoThrow {
+    XCTAssertNotNil([self.vc view]);
+    XCTAssertNoThrow([self.vc setLoginErrorStateWithMessage:nil]);
+}
+
+-(void) test_setLoginErrorStateWithMessageHavingEmptyParam_ShouldNoThrow {
+    XCTAssertNotNil([self.vc view]);
+    XCTAssertNoThrow([self.vc setLoginErrorStateWithMessage:@""]);
+}
+
 @end

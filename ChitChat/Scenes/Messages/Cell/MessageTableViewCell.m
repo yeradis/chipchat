@@ -17,6 +17,14 @@
     self.userIcon.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
+- (void) prepareForReuse {
+    self.userIcon.image = [UIImage imageNamed:@"person-icon.jpg"];
+    self.userName.text = @"";
+    self.content.text = @"";
+    self.time.text = @"";
+    self.serviceClient = nil;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
@@ -50,9 +58,11 @@
 }
 
 -(void) setupUserIcon:(UIImage*) image {
-    if(image){
+    if(image) {
+        dispatch_async(dispatch_get_main_queue(), ^(){
             self.userIcon.image = image;
-            [self.userIcon setNeedsDisplay];
+            [self.userIcon setNeedsDisplay];            
+        });
     }
 }
 

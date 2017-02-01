@@ -46,11 +46,12 @@ NSString* const kItemChats         = @"chats";
 
 @implementation Message
 
-@synthesize username,userImageUrl,content,time;
+@synthesize username,userImageUrl,content,time, messageId;
 
 -(id) initWithDictionary:(NSDictionary *) dictionary {
     self = [super init];
     if (self) {
+        messageId = [NSUUID UUID];
         [self parseDictionary:dictionary];
     }
     return self;

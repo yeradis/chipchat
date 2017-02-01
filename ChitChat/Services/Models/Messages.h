@@ -11,17 +11,18 @@ extern NSString* const kItemChats;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *userImageUrl;
 @property (nonatomic, copy) NSString *time;
+@property (readonly, nonnull, nonatomic) NSUUID * messageId;
 
--(id) initWithDictionary:(NSDictionary*) dictionary;
-+(BOOL) isValidMessageDictionary:(NSDictionary*) dictionary;
-+(nullable id) messageWithCurrentSession:(NSString*) session message:(NSString*) message;
+
+-(nonnull id) initWithDictionary:(nonnull NSDictionary*) dictionary;
++(BOOL) isValidMessageDictionary:(nonnull NSDictionary*) dictionary;
++(nullable id) messageWithCurrentSession:(nonnull NSString*) session message:(nonnull NSString*) message;
 @end;
 
 @protocol Messages
-
-@property (strong, nonatomic) NSArray<Message>* messages;
--(id) initWithDictionary:(NSDictionary*) dictionary;
-+(BOOL) isValidMessagesDictionary:(NSDictionary*) dictionary;
+@property (strong, nonatomic) NSArray<Message>  * _Nullable messages;
+-(nullable id) initWithDictionary:(nonnull NSDictionary*) dictionary;
++(BOOL) isValidMessagesDictionary:(nullable NSDictionary*) dictionary;
 @end;
 
 

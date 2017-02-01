@@ -180,6 +180,7 @@
 		785462671E32BC9E00FFCA66 /* ChitChat */ = {
 			isa = PBXGroup;
 			children = (
+				7892D7AF1E4272A500CF3BC8 /* Extras */,
 				782155B41E39042400A05B6B /* Scenes */,
 				785462E81E3506C800FFCA66 /* Services */,
 				7854626B1E32BC9E00FFCA66 /* AppDelegate.h */,
@@ -320,6 +321,13 @@
 				7864D8351E3FB4EA00E2CCE7 /* LoginViewControllerTests.m */,
 			);
 			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		7892D7AF1E4272A500CF3BC8 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extras;
 			sourceTree = "<group>";
 		};
 		78C8C0B51E3DCA5F009BA00D /* Cell */ = {

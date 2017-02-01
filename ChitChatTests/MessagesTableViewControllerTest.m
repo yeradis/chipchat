@@ -1,6 +1,7 @@
 #import <XCTest/XCTest.h>
 #import "MessagesTableViewController.h"
 #import <OCMock/OCMock.h>
+#import "Messages.h"
 
 @interface MessagesTableViewControllerTest : XCTestCase
 @property (strong, nonatomic) UIWindow *window;
@@ -49,13 +50,29 @@
     XCTAssertTrue([self.vc.tableView numberOfRowsInSection:0] == 0);
 }
 
--(void) test_tableView_WitSomeMessages_ShouldReturnSomeRows {
+-(void) test_tableView_WithSomeMessages_ShouldReturnSomeRows {
     [self setupServiceClient:[self mockMessagesDictionary]];
     
     self.vc.serviceClient = self.partiallyMockedApi;
     XCTAssertNoThrow(self.vc.view);
     [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
     XCTAssertTrue([self.vc.tableView numberOfRowsInSection:0] > 0);
+}
+
+-(void) test_tableView_WithOneMessageFromCurrentUser_ShouldReturnOneRow {
+    NSDictionary* message = @{kItemUserName:@"my user name",
+                              kItemUserImageUrl:@"",
+                              kItemContent:@"some simple message",
+                              kItemTime:@"just now"};
+    NSDictionary* messages = @{kItemChats:@[message]};
+    [self setupServiceClient:messages];
+    [self.partiallyMockedApi storeSession:@"my user name"];
+
+    self.vc.serviceClient = self.partiallyMockedApi;
+    XCTAssertNoThrow(self.vc.view);
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+    
+    XCTAssertTrue([self.vc.tableView numberOfRowsInSection:0] == 1);
 }
 
 -(NSDictionary*) mockMessagesDictionary {

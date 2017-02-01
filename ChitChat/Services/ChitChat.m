@@ -44,7 +44,7 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
 -(void) sendMessage:(NSString *)message success:(dispatch_block_t)success
             failure:(void (^)(NSError * _Nonnull))failure {
     if ([self isValidParam:message]) {
-
+        
         [self notifyMessage:[Message messageWithCurrentSession:self.session
                                                        message:message]];
         
@@ -65,7 +65,7 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
     
     if ([self isValidParam:username] &&
         ![self isExistingUserName:username]){
-    
+        
         [self handleLoginSuccess:success userName:username];
         
     } else {
@@ -73,7 +73,7 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
         errorMessage = ([self isValidParam:username] &&
                         [self isExistingUserName:username]) ?
         @"Choose another name":errorMessage;
-    
+        
         [self handleLoginFailure:failure message:errorMessage];
     }
 }
@@ -124,7 +124,7 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
             id<Messages> messages = nil;
             if (responseDictionary && [responseDictionary count] > 0) {
                 messages = [[Messages alloc] initWithDictionary:responseDictionary];
-            } 
+            }
             block(messages,error);
         }];
     }
@@ -166,43 +166,46 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
 
 -(void) fetchUserImageForMessage:(id<Message>)message completionBlock:(WSFinishedBlockWithImage)block {
     if (block) {
-        if (message == nil) {
-            NSError *error = [[NSError alloc] initWithDomain:@"Message can not be nil" code:666 userInfo:nil];
-            block(nil,error);
-            return;
-        }
-
-        /*
-         Images are cached on disk using standard NSURLCache built in iOS,
-         meaning that if your responses include proper cache headers,
-         those items should end up on disk in the cache.
-         
-         Either the Cache-Control header or the Expires header MUST be in the
-         HTTP response header from the server in order for the client to cache it
-         */
-        NSURL *imageURL = [NSURL URLWithString:message.userImageUrl];
-        NSURLRequest *imageRequest = [NSURLRequest requestWithURL:imageURL
-                                                      cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                                  timeoutInterval:3600];
-        
-        //Use the image from the image cache if it exists
-        UIImage *cachedImage = [UIImage imageWithData:[[AFImageDownloader defaultURLCache] cachedResponseForRequest:imageRequest].data];
-        
-        if (cachedImage) {
-            block(cachedImage, nil);
-        } else {
-            [[AFImageDownloader defaultInstance] downloadImageForURLRequest:imageRequest
-                                                                    success:^(NSURLRequest * _Nonnull request,
-                                                                              NSHTTPURLResponse * _Nullable response,
-                                                                              UIImage * _Nonnull responseObject) {
-                                                                        block(responseObject,nil);
-                                                                    } failure:^(NSURLRequest * _Nonnull request,
-                                                                                NSHTTPURLResponse * _Nullable response,
-                                                                                NSError * _Nonnull error) {
-                                                                        block(nil,error);
-                                                                    }];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            if (message == nil) {
+                NSError *error = [[NSError alloc] initWithDomain:@"Message can not be nil" code:666 userInfo:nil];
+                block(nil,error);
+                return;
+            }
             
-        }
+            /*
+             Images are cached on disk using standard NSURLCache built in iOS,
+             meaning that if your responses include proper cache headers,
+             those items should end up on disk in the cache.
+             
+             Either the Cache-Control header or the Expires header MUST be in the
+             HTTP response header from the server in order for the client to cache it
+             */
+            NSURL *imageURL = [NSURL URLWithString:message.userImageUrl];
+            NSURLRequest *imageRequest = [NSURLRequest requestWithURL:imageURL
+                                                          cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                      timeoutInterval:3600];
+            
+            //Use the image from the image cache if it exists
+            UIImage *cachedImage = [UIImage imageWithData:[[AFImageDownloader defaultURLCache] cachedResponseForRequest:imageRequest].data];
+            
+            if (cachedImage) {
+                block(cachedImage, nil);
+            } else {
+                //lets cancel any previous task for this message
+                AFImageDownloadReceipt* receipt = [[AFImageDownloadReceipt alloc] init];
+                receipt.receiptID = message.messageId;
+                [[AFImageDownloader defaultInstance] cancelTaskForImageDownloadReceipt:receipt];
+                
+                [[AFImageDownloader defaultInstance] downloadImageForURLRequest:imageRequest
+                                                                  withReceiptID:message.messageId
+                success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
+                    block(responseObject,nil);
+                } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                    block(nil,error);
+                }];
+            }
+        });
     }
 }
 

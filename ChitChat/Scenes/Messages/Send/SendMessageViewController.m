@@ -16,7 +16,7 @@
         [self.serviceClient sendMessage:self.message.text success:^{
             self.message.text = @"";
         } failure:^(NSError * _Nonnull error) {
-            
+            if(error) NSLog(@"Ooops! %@", error.domain);
         }];
     }
 }
