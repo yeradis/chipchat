@@ -87,5 +87,16 @@
     return json;
 }
 
+-(void) test_messageReceived_HavingNilMessage_ShouldNoThrow {
+    [self setupServiceClient:[self mockMessagesDictionary]];
+    self.vc.serviceClient = self.partiallyMockedApi;
+    
+    XCTAssertNoThrow(self.vc.view);
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+    
+    XCTAssertNoThrow(self.vc.serviceClient.messageReceived(nil));
+}
+
+
 
 @end

@@ -42,9 +42,11 @@
 - (void (^)(_Nullable id<Message> message))handleNewMessageReceived {
     __weak MessagesTableViewController *weakself = self;
     return ^(_Nullable id<Message> message) {
-        [weakself.messages addObject:message];
-        [weakself.tableView reloadData];
-        [weakself.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:weakself.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        if (message) {
+            [weakself.messages addObject:message];
+            [weakself.tableView reloadData];
+            [weakself.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:weakself.messages.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        }
     };
 }
 
