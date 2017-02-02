@@ -84,9 +84,11 @@ NSString *const kWS_BaseURL = @"https://s3-eu-west-1.amazonaws.com/rocket-interv
     
     [self fetchMessagesWithCompletionBlock:^(id<Messages>  _Nullable response, NSError * _Nullable error) {
         if (response){
-            NSMutableArray* currentUsernameList = [[NSMutableArray alloc] init];
+            NSMutableArray* currentUsernameList = [NSMutableArray arrayWithArray:self.reservedNames];
             for (id<Message> message in response.messages){
-                [currentUsernameList addObject:message.username];
+                if (![self isExistingUserName:message.username]) {
+                    [currentUsernameList addObject:message.username];
+                }
             }
             self.reservedNames = [currentUsernameList mutableCopy];
         }

@@ -97,6 +97,16 @@
     XCTAssertNoThrow(self.vc.serviceClient.messageReceived(nil));
 }
 
+-(void) test_messageReceived_HavingValidMessage_ShouldNoThrow {
+    [self setupServiceClient:[self mockMessagesDictionary]];
+    self.vc.serviceClient = self.partiallyMockedApi;
+    
+    XCTAssertNoThrow(self.vc.view);
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+    
+    id<Message> message = [Message messageWithCurrentSession:@"just the session" message:@"just a message"];
+    XCTAssertNoThrow(self.vc.serviceClient.messageReceived(message));
+}
 
 
 @end
