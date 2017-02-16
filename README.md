@@ -12,11 +12,8 @@ DISCLAIMER: This is not a fully functional chat app, its just a `Schibsted Chat 
 What you will find here:
 
 - Tests (XCTests, OCMock)
-- Integration Tests
-Done with just XCTest and OCMock
-
 - NO VIPER, NO MVVM, NO VIP, just the usual MVC but no soo Massive ;)
-- +90% of Code Coverage, yes, this includes testing some ui calls, items at the list, with the usual hack "[viewcontroller view]" to fire everying inside
+- +90% of Code Coverage, yes, this includes testing network calls, some ui calls cheking items at the list, with the usual hack "[viewcontroller view]" to fire everying inside
 - Usage of custom UICollectionViewCell
 - etc...
 
