@@ -7,7 +7,7 @@ To handle dependencies, i´m using Carthage, so, before trying to play with this
 carthage update
 ```
 
-DISCLAIMER: This is not a fully functional chat app, its just a `Schibsted Chat Interview Test`
+DISCLAIMER: This is not a fully functional chat app, its just a `Chat Interview Test`
 
 What you will find here:
 
